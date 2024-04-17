@@ -7,7 +7,8 @@ def api_query(city):
     if(response):
         json_data = json.loads(response.text)
         temp_c = json_data['current']['temp_c']
-        print(f"Today it is {temp_c}°C in {city}.")
+        country = json_data['location']['country']
+        print(f"Today it is {temp_c}°C in {city}, {country}.")
     else:
         print("Sorry that is not a valid city, please try again later.")
 
